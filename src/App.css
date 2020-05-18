@@ -8,6 +8,7 @@ html, body, #root, .App {
 /* Grid */
 #container {
   height: 100%;
+  width: 100%;
   display: grid;
   grid-template-rows: auto;
   grid-template-areas:
@@ -17,13 +18,13 @@ html, body, #root, .App {
     'item3'
     'item4';
   grid-gap: 5px;
-  background-color: white;
-  padding: 10px;
+  padding: 5px;
 }
 
 @media (min-width: 700px) {
   #container {
     height: 100%;
+    width: 100%;
     display: grid;
     grid-template-rows: 10% 45% 45%;
     grid-template-columns: repeat(2, minmax(300px, 1fr));
@@ -33,7 +34,7 @@ html, body, #root, .App {
       'item3 item4';
     grid-gap: 5px;
     background-color: white;
-    padding: 10px;
+    padding: 5px;
   }
 }
 

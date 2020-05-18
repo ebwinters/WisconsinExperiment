@@ -10,9 +10,9 @@ const getTimelineData = async () => {
     }
 }
 
-const getStateData = async () => {
+const getMobilityData = async () => {
     try {
-        const response = await axios.get('https://disease.sh/v2/states/wisconsin');
+        const response = await axios.get('https://disease.sh/v2/apple/countries/usa/wisconsin');
         return response.data;
     } catch (err) {
         console.log('Error: Requesting historical data failed!', err);
@@ -20,7 +20,10 @@ const getStateData = async () => {
     }
 }
 
+
+//get county data
+
 module.exports = {
     getTimelineData,
-    getStateData
+    getMobilityData
 };

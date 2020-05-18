@@ -1,5 +1,6 @@
 import React from 'react';
 import Historical from './Historical';
+import Mobility from './Mobility';
 
 class Container extends React.Component {
     constructor(props) {
@@ -20,10 +21,14 @@ class Container extends React.Component {
                     <p>Here's how it's going</p>
                 </div>
                 <div className="item1">
-                    <Historical />
+                    <Historical cases/>
                 </div>
-                <div className="item2">Top right</div>  
-                <div className="item3">Bottom left</div>
+                <div className="item2">
+                    <Historical deaths/>
+                </div>  
+                <div className="item3">
+                    <Mobility />
+                </div>
                 <div className="item4">Bottom right</div>
             </div>
         );

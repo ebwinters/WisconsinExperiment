@@ -6,7 +6,7 @@ const {getTimelineData} = require('./getData');
 
 const formatData = (data) => ((data).map((entry) => ({date: entry.date.split('-').slice(1).join('-'), cases: entry.cases, deaths: entry.deaths})));
 
-class Historical extends React.Component {
+class Mobility extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,10 +29,9 @@ class Historical extends React.Component {
                         <CartesianGrid stroke="#82807f"/>
                         <XAxis tick={{fontSize: 10}} dataKey="date" interval={7} />
                         <YAxis tick={{fontSize: 10}} />
-                        <Tooltip />
+                        <Tooltip labelStyle={{color: '#212120'}} labelFormatter={(name) => name}/>
                         <Legend />
-                        <Line type="monotone" dataKey="cases" stroke="#359c02" dot={false} />
-                        <Line type="monotone" dataKey="deaths" stroke="#c40205" dot={false} />
+                        <Line type="monotone" dataKey={this.props.cases ? "cases" : "deaths"} stroke={this.props.cases ? "#359c02" : "#c40205"} dot={false} />
                         <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'left', fontSize: 10, fill: 'white'}}/>
                     </LineChart>
             </ResponsiveContainer>
@@ -40,4 +39,4 @@ class Historical extends React.Component {
     }
 }
 
-export default Historical;
+export default Mobility;
