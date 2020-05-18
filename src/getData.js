@@ -1,16 +1,16 @@
 const axios = require('axios')
 
-const getHistoricalData = async () => {
+const getTimelineData = async () => {
     try {
-        const response = await axios.get('https://disease.sh/v2/historical/usacounties/wisconsin');
-        return response.data;
+        const response = await axios.get('https://disease.sh/v2/nyt/states/wisconsin');
+        return response.data.splice(45);
     } catch (err) {
         console.log('Error: Requesting historical data failed!', err);
         return;
     }
 }
 
-const getStatelData = async () => {
+const getStateData = async () => {
     try {
         const response = await axios.get('https://disease.sh/v2/states/wisconsin');
         return response.data;
@@ -21,6 +21,6 @@ const getStatelData = async () => {
 }
 
 module.exports = {
-    getHistoricalData,
-    getStatelData
+    getTimelineData,
+    getStateData
 };

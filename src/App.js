@@ -1,13 +1,12 @@
 import React from 'react';
-import Historical from './Historical';
+import Container from './Container';
+
 import './App.css'; 
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Historical />
-      </header>
+        <Container />
     </div>
   );
 }

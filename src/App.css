@@ -1,17 +1,56 @@
-.App {
-  text-align: center;
+html, body, #root, .App {
+  margin: 0;
+  height: 100%;
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+
+/* Grid */
+#container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 10% 45% 45%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas:
+    'header header'
+    'item1 item2'
+    'item3 item4';
+  grid-gap: 5px;
+  background-color: white;
+  padding: 10px;
+}
+
+#container > div {
+  background-color: #212120;
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Header */
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+}
+
+.header > h1, p {
+  margin: 0
+}
+
+/* Item 1 */
+.item1 {
+  grid-area: item1;
+  display: flex;
+}
+
+.item2 {
+  grid-area: item2;
+}
+
+.item3 {
+  grid-area: item3;
+}
+
+.item4 {
+  grid-area: item4;
 }

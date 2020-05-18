@@ -1,13 +1,10 @@
 import React from 'react';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, Label
 } from 'recharts';
-const {getHistoricalData} = require('./getData');
+const {getTimelineData} = require('./getData');
 
-const formatData = (data) => (
-    //key data, value num
-    Object.entries(data).map(([key, value]) => ({date: key, cases: value}))
-);
+const formatData = (data) => ((data).map((entry) => ({date: entry.date.split('-').slice(1).join('-'), cases: entry.cases, deaths: entry.deaths})));
 
 class Historical extends React.Component {
     constructor(props) {
@@ -16,30 +13,29 @@ class Historical extends React.Component {
             data: null
         };
     }
+
     async componentDidMount() {
-        const data = await getHistoricalData();
-        const formattedData = formatData(data[4].timeline.cases);
-        this.setState({data: formattedData});
-        console.log("DATA", formattedData);
+        const data = await getTimelineData();
+        this.setState({data: formatData(data)});
     }
 
     render() {
         return (
-            <LineChart
-                width={1000}
-                height={700}
-                data={this.state.data}
-                margin={{
-                    top: 5, right: 30, left: 20, bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="" />
-                <XAxis tick={{fontSize: 10}} dataKey="date" interval={3} />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="cases" stroke="#82ca9d" />
-            </LineChart>
+            <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                        margin={{ top: 0, left: 0, right: 15, bottom: 0 }}
+                        data={this.state.data}
+                    >
+                        <CartesianGrid stroke="#82807f"/>
+                        <XAxis tick={{fontSize: 10}} dataKey="date" interval={7} />
+                        <YAxis tick={{fontSize: 10}} />
+                        <Tooltip />
+                        <Legend />
+                        <Line type="monotone" dataKey="cases" stroke="#359c02" dot={false} />
+                        <Line type="monotone" dataKey="deaths" stroke="#c40205" dot={false} />
+                        <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'left', fontSize: 10, fill: 'white'}}/>
+                    </LineChart>
+            </ResponsiveContainer>
         );
     }
 }
