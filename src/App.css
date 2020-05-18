@@ -9,15 +9,32 @@ html, body, #root, .App {
 #container {
   height: 100%;
   display: grid;
-  grid-template-rows: 10% 45% 45%;
-  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
   grid-template-areas:
-    'header header'
-    'item1 item2'
-    'item3 item4';
+    'header'
+    'item1'
+    'item2'
+    'item3'
+    'item4';
   grid-gap: 5px;
   background-color: white;
   padding: 10px;
+}
+
+@media (min-width: 700px) {
+  #container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 45% 45%;
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+    grid-template-areas:
+      'header header'
+      'item1 item2'
+      'item3 item4';
+    grid-gap: 5px;
+    background-color: white;
+    padding: 10px;
+  }
 }
 
 #container > div {

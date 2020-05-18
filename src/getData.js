@@ -3,7 +3,7 @@ const axios = require('axios')
 const getTimelineData = async () => {
     try {
         const response = await axios.get('https://disease.sh/v2/nyt/states/wisconsin');
-        return response.data.splice(45);
+        return response.data.splice(60);
     } catch (err) {
         console.log('Error: Requesting historical data failed!', err);
         return;

@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine, Label
+    LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ReferenceLine
 } from 'recharts';
 const {getTimelineData} = require('./getData');
 
@@ -23,7 +23,7 @@ class Historical extends React.Component {
         return (
             <ResponsiveContainer width="100%" height="100%">
                     <LineChart
-                        margin={{ top: 0, left: 0, right: 15, bottom: 0 }}
+                        margin={{ top: 10, left: 0, right: 15, bottom: 0 }}
                         data={this.state.data}
                     >
                         <CartesianGrid stroke="#82807f"/>
