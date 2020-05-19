@@ -20,10 +20,20 @@ const getMobilityData = async () => {
     }
 }
 
+const getCountyData = async () => {
+    try {
+        const response = await axios.get('https://disease.sh/v2/jhucsse/counties');
+        return response.data.filter(obj => obj.province === 'Wisconsin');
+    } catch (err) {
+        console.log('Error: Requesting historical data failed!', err);
+        return;
+    }
+}
 
 //get county data
 
 module.exports = {
     getTimelineData,
-    getMobilityData
+    getMobilityData,
+    getCountyData
 };

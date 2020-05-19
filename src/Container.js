@@ -1,6 +1,7 @@
 import React from 'react';
 import Historical from './Historical';
 import Mobility from './Mobility';
+import Counties from './Counties';
 
 class Container extends React.Component {
     constructor(props) {
@@ -29,7 +30,12 @@ class Container extends React.Component {
                 <div className="item3">
                     <Mobility />
                 </div>
-                <div className="item4">Bottom right</div>
+                <div className="item4">
+                    <Counties />
+                </div>
+                <div className="footer">
+                    <p>Source: <a style={{color: 'white', textDecoration: 'underline'}} href="https://github.com/NovelCOVID/API">NOVELCovid API</a></p>
+                </div>
             </div>
         );
     }
