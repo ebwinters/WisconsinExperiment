@@ -7,16 +7,13 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
-    "ioredis": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "recharts": "^1.8.5"
   },
   "scripts": {
-    "start:scraper": "node src/Scraper.js",
-    "start:server": "react-scripts start",
-    "start": "concurrently --kill-others-on-fail --kill-others \"npm:start:server\" \"npm:start:scraper\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -37,6 +34,5 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^5.2.0"
   }
 }
