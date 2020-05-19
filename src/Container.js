@@ -34,7 +34,7 @@ class Container extends React.Component {
                     <Counties />
                 </div>
                 <div className="footer">
-                    <p>Source: <a style={{color: 'white', textDecoration: 'underline'}} href="https://github.com/NovelCOVID/API">NOVELCovid API</a></p>
+                    <p>Source: <a style={{color: 'white', textDecoration: 'underline'}} target="blank" href="https://github.com/NovelCOVID/API">NOVELCovid API</a></p>
                 </div>
             </div>
         );
