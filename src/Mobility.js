@@ -32,7 +32,7 @@ class Historical extends React.Component {
                                 <stop offset="95%" stopColor="#5928bd" stopOpacity={0}/>
                             </linearGradient>
                         </defs>
-                        <CartesianGrid stroke="#82807f"/>
+                        <CartesianGrid stroke="#525151"/>
                         <XAxis tick={{fontSize: 10}} dataKey="date" interval={7} />
                         <YAxis tick={{fontSize: 10}}>
                             <Label angle={-90} value='% +/- of driving traffic from Jan. 13' fontSize={12} fill="#82807f" style={{textAnchor: 'middle'}} />

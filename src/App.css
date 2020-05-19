@@ -17,8 +17,8 @@ html, body, #root, .App {
     'item2'
     'item3'
     'item4';
-  grid-gap: 5px;
-  padding: 5px;
+  grid-gap: 2px;
+  padding: 2px;
 }
 
 @media (min-width: 700px) {
@@ -32,9 +32,8 @@ html, body, #root, .App {
       'header header'
       'item1 item2'
       'item3 item4';
-    grid-gap: 5px;
-    background-color: white;
-    padding: 5px;
+    grid-gap: 2px;
+    padding: 2px;
   }
 }
 
@@ -63,12 +62,15 @@ html, body, #root, .App {
 
 .item2 {
   grid-area: item2;
+  display: flex;
 }
 
 .item3 {
   grid-area: item3;
+  display: flex;
 }
 
 .item4 {
   grid-area: item4;
+  display: flex;
 }

@@ -26,7 +26,7 @@ class Mobility extends React.Component {
                         margin={{ top: 10, left: 0, right: 15, bottom: 0 }}
                         data={this.state.data}
                     >
-                        <CartesianGrid stroke="#82807f"/>
+                        <CartesianGrid stroke="#525151"/>
                         <XAxis tick={{fontSize: 10}} dataKey="date" interval={7} />
                         <YAxis tick={{fontSize: 10}} />
                         <Tooltip labelStyle={{color: '#212120'}} labelFormatter={(name) => name}/>
