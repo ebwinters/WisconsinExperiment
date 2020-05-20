@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const getTimelineData = async () => {
+export const getTimelineData = async () => {
     try {
         const response = await axios.get('https://disease.sh/v2/nyt/states/wisconsin');
         return response.data.splice(60);
@@ -10,7 +10,7 @@ const getTimelineData = async () => {
     }
 }
 
-const getMobilityData = async () => {
+export const getMobilityData = async () => {
     try {
         const response = await axios.get('https://disease.sh/v2/apple/countries/usa/wisconsin');
         return response.data;
@@ -20,7 +20,7 @@ const getMobilityData = async () => {
     }
 }
 
-const getCountyData = async () => {
+export const getCountyData = async () => {
     try {
         const response = await axios.get('https://disease.sh/v2/jhucsse/counties');
         return response.data.filter(obj => obj.province === 'Wisconsin');
@@ -29,11 +29,3 @@ const getCountyData = async () => {
         return;
     }
 }
-
-//get county data
-
-module.exports = {
-    getTimelineData,
-    getMobilityData,
-    getCountyData
-};

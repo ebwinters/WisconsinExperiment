@@ -1,6 +1,6 @@
 {
   "short_name": "Wisconsin Experiment",
   "name": "The Wisonsin Experiment",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone"
 }
