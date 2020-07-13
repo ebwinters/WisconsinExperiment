@@ -18,8 +18,7 @@ class Container extends React.Component {
         return (
             <div id="container">
                 <div className="header">
-                    <h1>Wisconsin decided to open up early...</h1>
-                    <p>Here's how it's going</p>
+                    <h1>Illinois COVID-19 Dashboard</h1>
                 </div>
                 <div className="item1">
                     <Historical cases/>
