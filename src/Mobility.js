@@ -40,7 +40,7 @@ class Historical extends React.Component {
                         <Tooltip labelStyle={{color: '#212120'}} labelFormatter={(name) => name}/>
                         <Legend />
                         <Area type="monotone" dataKey="driving" stroke="#5928bd" fillOpacity={1} fill="url(#colorUv)"/>
-                        <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'outsideleft', fontSize: 10, fill: 'white'}}/>
+                        {/* <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'outsideleft', fontSize: 10, fill: 'white'}}/> */}
                     </AreaChart>
             </ResponsiveContainer>
         );

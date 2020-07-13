@@ -32,7 +32,7 @@ class Mobility extends React.Component {
                         <Tooltip labelStyle={{color: '#212120'}} labelFormatter={(name) => name}/>
                         <Legend />
                         <Line type="monotone" dataKey={this.props.cases ? "cases" : "deaths"} stroke={this.props.cases ? "#359c02" : "#c40205"} dot={false} />
-                        <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'left', fontSize: 10, fill: 'white'}}/>
+                        {/* <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'left', fontSize: 10, fill: 'white'}}/> */}
                     </LineChart>
             </ResponsiveContainer>
         );
