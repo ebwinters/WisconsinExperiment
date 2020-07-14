@@ -21,7 +21,7 @@ class Container extends React.Component {
                     <h1>Illinois COVID-19 Dashboard</h1>
                 </div>
                 <div className="item1">
-                    <Historical cases/>
+                    <Historical newCases/>
                 </div>
                 <div className="item2">
                     <Historical deaths/>

@@ -4,7 +4,7 @@ import {
 } from 'recharts';
 const {getTimelineData} = require('./getData');
 
-const formatData = (data) => ((data).map((entry) => ({date: entry.date.split('-').slice(1).join('-'), cases: entry.cases, deaths: entry.deaths})));
+const formatData = (data) => ((data).map((entry) => ({date: entry.date.split('-').slice(1).join('-'), newCases: entry.newCases, deaths: entry.deaths})));
 
 class Mobility extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ class Mobility extends React.Component {
                         <YAxis tick={{fontSize: 10}} />
                         <Tooltip labelStyle={{color: '#212120'}} labelFormatter={(name) => name}/>
                         <Legend />
-                        <Line type="monotone" dataKey={this.props.cases ? "cases" : "deaths"} stroke={this.props.cases ? "#359c02" : "#c40205"} dot={false} />
+                        <Line type="monotone" dataKey={this.props.newCases ? "newCases" : "deaths"} stroke={this.props.newCases ? "#359c02" : "#c40205"} dot={false} />
                         {/* <ReferenceLine x="05-14" stroke="white" label={{value: 'reopening', position: 'left', fontSize: 10, fill: 'white'}}/> */}
                     </LineChart>
             </ResponsiveContainer>
